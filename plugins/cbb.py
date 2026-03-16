@@ -45,11 +45,13 @@ async def cb_handler(client: Bot, query: CallbackQuery):
                 id=query.from_user.id),
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton("• ᴄʜᴀɴɴᴇʟꜱ •", url="https://t.me/freestoryhubmr")],
-             [
-                 InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data='about'),
-                 InlineKeyboardButton("ʜᴇʟᴘ", callback_data='help')]
-            ]
+                [
+                    InlineKeyboardButton("• ᴄʜᴀɴɴᴇʟꜱ •", url="https://t.me/Codeflix_Bots")
+                ],
+                [
+                    InlineKeyboardButton("• ᴀʙᴏᴜᴛ •", callback_data='about'),
+                    InlineKeyboardButton("• ʜᴇʟᴘ •", callback_data='help')
+                ]
             ])
         )
 
