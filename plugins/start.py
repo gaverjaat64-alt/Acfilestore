@@ -464,24 +464,3 @@ async def bcmd(bot: Bot, message: Message):
 
 
 
-@Bot.on_message(filters.command('stats') & filters.private & admin)
-async def bot_stats(bot: Bot, message: Message):
-    # Uptime calculate karne ke liye (Aapki script mein StartTime pehle se define hogi)
-    from helper_func import get_exp_time # Agar get_readable_time hai toh wo use karein
-    import time
-    
-    # StartTime aksar bot.py ya config.py mein hoti hai
-    # Hum yahan current time se diff nikaal rahe hain
-    current_time = time.time()
-    uptime_seconds = current_time - StartTime
-    uptime_string = get_exp_time(uptime_seconds)
-
-    reply_markup = InlineKeyboardMarkup([[
-        InlineKeyboardButton("• ᴄʟᴏsᴇ •", callback_data="close")
-    ]])
-    
-    await message.reply(
-        text=BOT_STATS_TEXT.format(uptime=uptime_string), 
-        reply_markup=reply_markup, 
-        quote=True
-                                                              )
